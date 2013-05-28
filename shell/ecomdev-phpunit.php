@@ -132,6 +132,13 @@ Defined actions:
 USAGE;
     }
 
+    protected function __construct()
+    {
+        // We need only include mage, but not run app
+        require_once $this->_getRootPath() . 'app' . DIRECTORY_SEPARATOR . 'Mage.php';
+        parent::__construct();
+    }
+
     /**
      * Runs scripts itself
      */
