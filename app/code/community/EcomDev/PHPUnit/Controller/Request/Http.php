@@ -356,7 +356,7 @@ class EcomDev_PHPUnit_Controller_Request_Http
         $parts = parse_url($baseUrl);
 
         if (!isset($parts['host'])) {
-            throw new RuntimeException('Cannot run controller test, because the host is not set for base url.');
+            throw new RuntimeException(sprintf('Cannot run controller test, because the host is not set for base url. Base url was "%s".', $baseUrl));
         }
 
         $httpHost = $parts['host'];
